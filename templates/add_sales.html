@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Sales
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="mt-5">Add Sales</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="game" class="form-label">Game Name</label>
+            <input type="text" class="form-control" id="game" name="game" placeholder="Enter game name" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="highest_discount" class="form-label">Highest Discount</label>
+            <input type="text" class="form-control" id="highest_discount" name="highest_discount" placeholder="Enter event name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="discount_price" class="form-label">Discount Price</label>
+            <input type="number" step="0.01" class="form-control" id="discount_price" name="discount_price" placeholder="Enter discount price" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="start" class="form-label">Start Date</label>
+            <input type="date" class="form-control" id="start" name="start" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="end" class="form-label">End Date</label>
+            <input type="date" class="form-control" id="end" name="end" required>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a href="{{ url_for('sales') }}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Add Sales</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

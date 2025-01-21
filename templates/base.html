@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>{% block title %} Buywinter.com {% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container"> <!-- Use standard container for smaller width -->
+                <!-- Tombol navbar brand yang mengarah ke halaman utama -->
+                <a class="navbar-brand" href="{{ url_for('index') }}">Buywinter.com</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('product') }}">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('sales') }}">Sales</a>
+                        </li>                                                                      
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('other') }}">Other</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    {% block content %} {% endblock %}
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Steam Wallet Market. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+</html>

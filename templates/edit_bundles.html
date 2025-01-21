@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Bundles
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="mt-5">Edit Bundle</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="bundle_name" class="form-label">Bundle Name</label>
+            <input type="text" class="form-control" id="bundle_name" name="bundle_name" value="{{ bundle.bundle_name }}">
+        </div>
+        
+        <div class="mb-3">
+            <label for="franchise_name" class="form-label">Franchise Name</label>
+            <input type="text" class="form-control" id="franchise_name" name="franchise_name" value="{{ bundle.franchise_name }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="games" class="form-label">Games</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="game_input" placeholder="Enter game name">
+                <button type="button" class="btn btn-outline-secondary" id="add_game">Add Game</button>
+            </div>
+            <div id="error-message" class="text-danger mt-2" style="display: none;">
+                Game name cannot be empty.
+            </div>
+            <table class="table mt-3" id="games_table">
+                <thead>
+                    <tr>
+                        <th>Game Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for game in bundle.games.split(',') %}
+                    <tr>
+                        <td>{{ game }}</td>
+                        <td><button type="button" class="btn btn-danger btn-sm remove_game">Remove</button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!-- Hidden input field to store the list of games -->
+            <input type="hidden" id="games_list" name="games" value="{{ bundle.games }}">
+        </div>
+        
+        <div class="mb-3">
+            <label for="bundle_price" class="form-label">Bundle Price</label>
+            <input type="number" class="form-control" id="bundle_price" name="bundle_price" value="{{ bundle.bundle_price }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="start" class="form-label">Start Date</label>
+            <input type="date" class="form-control" id="start" name="start" value="{{ bundle.start }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="end" class="form-label">End Date</label>
+            <input type="date" class="form-control" id="end" name="end" value="{{ bundle.end }}" required>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a href="{{ url_for('sales') }}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Add a new game to the table
+    document.getElementById('add_game').addEventListener('click', function() {
+        const gameName = document.getElementById('game_input').value.trim();
+        const errorMessage = document.getElementById('error-message');
+        
+        if (gameName) {
+            const table = document.getElementById('games_table').getElementsByTagName('tbody')[0];
+            const row = table.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            
+            cell1.textContent = gameName;
+            cell2.innerHTML = '<button type="button" class="btn btn-danger btn-sm remove_game">Remove</button>';
+            
+            // Clear the input field
+            document.getElementById('game_input').value = '';
+            errorMessage.style.display = 'none';  // Hide error message if the game is added
+
+            // After adding the first game, remove the required attribute from input
+            document.getElementById('game_input').removeAttribute('required');
+            
+            // Add event listener to remove button
+            row.querySelector('.remove_game').addEventListener('click', function() {
+                row.remove();
+                updateGamesList(); // Update the hidden games list after removing a game
+            });
+
+            updateGamesList(); // Update the hidden games list after adding a game
+        } else {
+            errorMessage.style.display = 'block';  // Show error message if game name is empty
+        }
+    });
+
+    // Update the hidden input field with the current list of games
+    function updateGamesList() {
+        const games = [];
+        const rows = document.getElementById('games_table').getElementsByTagName('tbody')[0].rows;
+        for (let i = 0; i < rows.length; i++) {
+            games.push(rows[i].cells[0].textContent); // Get game names
+        }
+        document.getElementById('games_list').value = JSON.stringify(games); // Set the hidden input field with the JSON string of games
+    }
+
+    // Ensure the hidden games list is updated before the form is submitted
+    document.querySelector('form').addEventListener('submit', function() {
+        updateGamesList();
+    });
+
+    // Listen for "remove game" button click to remove the game and update the list
+    document.querySelectorAll('.remove_game').forEach(button => {
+        button.addEventListener('click', function() {
+            this.closest('tr').remove();
+            updateGamesList();
+        });
+    });
+</script>
+
+{% endblock %}

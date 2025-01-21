@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+About Us
+{% endblock %}
+
+{% block content %}
+
+<div class="content-other">
+    <div class="container mt-4">
+
+        <h2 class="mt-5">Gift Game & Suntik Wallet</h2>
+        <div class="d-flex justify-content-between align-items-start">
+            <div class="mt-5 col-md-6">
+                <p>
+                    Kami menawarkan layanan khusus untuk memperkaya pengalaman bermain game Anda dengan metode Gift Game serta melakukan Suntik saldo Steam Wallet.
+                    Layanan ini disediakan oleh Admin, transaksi dilakukan sesuai dengan ketentuan yang berlaku.
+                </p>
+                <p class="mt-4">
+                    Untuk memulai, pastikan Anda sudah menambahkan akun Steam Admin kami sebagai teman di Steam.
+                    Setelah itu, Anda dapat memilih layanan yang diinginkan, Kami juga menyediakan berbagai metode pembayaran yang fleksibel untuk kenyamanan Anda.
+                </p>
+                <p class="mt-4">
+                    Jika Anda memiliki pertanyaan atau membutuhkan informasi lebih lanjut, silakan menghubungi kami melalui Instagram. Klik tombol kontak di bawah untuk langsung DM ke Instagram Admin.
+                </p>
+                <p class="mt-4">
+                    Berikut juga link tombol menuju akun Steam Admin, silahkan di Add Friend, cheers!
+                </p>
+                <p class="d-flex justify-content-center">
+                    <a href="https://steamcommunity.com/id/ryouwinter/" class="nav-btn">Steam Admin</a>
+                    <a href="{{ url_for('contact') }}" class="nav-btn">Contact</a>
+                </p>
+            </div>
+            
+            <div class="mt-5 col-md-6">
+                <img src="{{ url_for('static', filename='img/other.jpg') }}" alt="Other Image" class="img-fluid rounded img-other float-end">
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
+
+{% endblock %}

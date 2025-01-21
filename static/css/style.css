@@ -1,0 +1,307 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #7C444F;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+main {
+    flex: 1;
+    min-height: 100vh;
+}
+
+h1 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.btn-buy {
+    background-color: #007bff;
+    color: white;
+    font-size: 13px;
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    font-weight: 500;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    font-weight: 500;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.card {
+    border-radius: 8px;
+    font-weight: 400;
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+}
+
+.card-img-top {
+    border-radius: 8px 8px 0 0;
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 95%;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.content {
+    margin-bottom: 100px;
+}
+
+.content-other {
+    margin-bottom: 310px;
+}
+
+.content-contact {
+    margin-bottom: 295px;
+}
+
+.footer {
+    background-color: #9F5255;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    flex-shrink: 0;
+    font-weight: 400;
+}
+
+.game-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    text-align: left;
+    padding: 5px;
+    margin: 0;
+}
+
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.game-item {
+    padding: 5px;
+    background-color: #f8f9fa;
+    color: #212529;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-weight: 500;
+}
+
+.game-column p {
+    margin: 0;
+    font-style: italic;
+    color: #6c757d;
+    text-align: left;
+}
+
+.hero {
+    background: url('../img/background.jpg') no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.img-contact {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid white;
+}
+
+.img-other {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid white;
+}
+
+.navbar {
+    background-color: #9F5255;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+.navbar .container {
+    max-width: 1200px;
+}
+
+.nav-btn {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto 3rem;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #9F5255;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #E16A54;
+}
+
+.products {
+    padding: 1.5rem 0;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.table {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 400;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .products h2 {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .btn-buy {
+        font-size: 11px;
+    }
+
+    .footer {
+        padding: 0.8rem 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    .footer {
+        padding: 1.5rem 0;
+    }
+}

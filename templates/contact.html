@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+<div class="content-contact">
+    <div class="container mt-4 text-center">
+        <h2 class="mt-5">Contact</h2>
+        
+        <div class="mt-5 map-container mt-4 mb-4">
+            <img src="{{ url_for('static', filename='img/contact.jpg') }}" alt="Contact Image" class="img-contact">
+        </div>
+        
+        <div class="contact-details mt-4">
+            <div class="d-flex justify-content-center">
+                <a href="https://www.instagram.com/buywinter/" class="nav-btn">Instagram</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

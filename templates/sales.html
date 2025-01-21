@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}
+Sales
+{% endblock %}
+
+{% block content %}
+
+<div class="content">
+<div class="container mt-4">
+    
+    <h2 class="mt-5">Hot Sales</h2>
+    <a href="{{ url_for('add_sales') }}" class="btn btn-primary mb-3">+ Add Sales</a>
+    <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+            <tr>
+                <th>ID</th>
+                <th>Game</th>
+                <th>Highest Discount</th>
+                <th>Discount Price</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sales in sales %}
+            <tr>
+                <td>{{ sales.id }}</td>
+                <td>{{ sales.game }}</td>
+                <td>{{ sales.highest_discount }}</td>
+                <td>Rp {{ "{:,.0f}".format(sales.discount_price) }}</td>
+                <td>{{ sales.start.strftime('%d/%m/%Y') }}</td>
+                <td>{{ sales.end.strftime('%d/%m/%Y') }}</td>
+                <td>
+                    <a href="{{ url_for('edit_sales', id=sales.id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{{ url_for('delete_sales', id=sales.id) }}" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <hr class="my-5" style="border-top: 2px solid #ccc;">
+
+    <h2 class="mt-5">Bundles</h2>
+    <a href="{{ url_for('add_bundles') }}" class="btn btn-primary mb-3">+ Add Bundle</a>
+    <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+            <tr>
+                <th>ID</th>
+                <th>Franchise</th>
+                <th>Bundle Name</th>
+                <th>Games</th>
+                <th>Bundle Price</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bundles in bundles %}
+            <tr>
+                <td>{{ bundles.id }}</td>
+                <td>{{ bundles.franchise_name }}</td>
+                <td>{{ bundles.bundle_name }}</td>
+                <td class="game-column">
+                    {% if bundles.games %}
+                        <div class="game-list">
+                            {% for game in bundles.games.split(',') %}
+                                <div class="game-item">
+                                    <p>{{ game }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p>No games added</p>
+                    {% endif %}
+                </td>
+                <td>Rp {{ "{:,.0f}".format(bundles.bundle_price) }}</td>
+                <td>{{ bundles.start.strftime('%d/%m/%Y') }}</td>
+                <td>{{ bundles.end.strftime('%d/%m/%Y') }}</td>
+                <td>
+                    <a href="{{ url_for('edit_bundles', id=bundles.id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{{ url_for('delete_bundles', id=bundles.id) }}" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-center mt-5">
+        <a href="{{ url_for('other') }}" class="nav-btn">Other</a>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}
