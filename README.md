@@ -1,13 +1,13 @@
 # UAS-Pemrograman-Web – Buywinter.com
 
 ##  Deskripsi
-Website **Buywinter.com** ini dibuat sebagai bagian dari tugas Ujian Akhir (UAS) Semester untuk mata kuliah Pemrograman Web. Project ini merupakan aplikasi web berbasis Flask dengan fitur interaksi database MySQL (via file `db_steam.sql`).
+Website **Buywinter.com** ini dibuat sebagai bagian dari tugas Ujian Akhir (UAS) Semester untuk mata kuliah Pemrograman Web. Project ini merupakan aplikasi web berbasis Flask dengan fitur interaksi database MySQL.
 
 ##  Struktur
-- `/static` → File CSS, JavaScript, dan assets statis
-- `/templates` → Template HTML untuk tampilan user
-- `app.py` → Script utama aplikasi Flask
-- `db_steam.sql` → Skrip SQL untuk setup database
+- `/static` - File CSS, JavaScript, dan assets statis
+- `/templates` - Template HTML untuk tampilan user
+- `app.py` - Script utama aplikasi Flask
+- `db_steam.sql` - Skrip SQL untuk setup database
 
 ##  Komponen
 | Bagian        | Library               |
@@ -37,5 +37,5 @@ export FLASK_ENV=development  # Mac/Linux
 flask run --debug
 
 # (5) Setup database
-Import `db_steam.sql` ke database MySQL
+Import `db_steam.sql` ke database online (cth: filess.io)
 
