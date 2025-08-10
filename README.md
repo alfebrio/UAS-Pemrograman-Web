@@ -10,13 +10,13 @@ Website **Buywinter.com** ini dibuat sebagai bagian dari tugas Ujian Akhir (UAS)
 - `db_steam.sql` → Skrip SQL untuk setup database
 
 ##  Komponen
-| Bagian            | Library                         |
-|-------------------|---------------------------------|
-| Backend           | Python + Flask                  |
-| Database          | MySQL (via `db_steam.sql`)      |
-| Frontend          | HTML, CSS                       |
+| Bagian        | Library               |
+|---------------|-----------------------|
+| Backend       | Python + Flask        |
+| Database      | MySQL                 |
+| Frontend      | HTML, CSS             |
 
-##  Instalasi & Setup
+##  Setup
 ```bash
 # (1) Buat virtual environment dan aktifkan
 virtualenv FlaskEnv
