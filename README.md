@@ -1,7 +1,7 @@
 # UAS-Pemrograman-Web
 
 ##  Deskripsi
-Repositori ini merupakan Website yang dibuat sebagai implementasi tugas Ujian Akhir (UAS) Semester untuk mata kuliah Pemrograman Web. Project ini merupakan aplikasi web berbasis Flask dengan fitur interaksi database MySQL.
+Repositori ini merupakan Website yang dibuat sebagai implementasi tugas Ujian Akhir Semester (UAS) untuk mata kuliah Pemrograman Web. Project ini merupakan aplikasi web berbasis Flask dengan fitur interaksi database MySQL.
 
 ##  Struktur
 - `/static` - File CSS, JavaScript, dan assets statis
