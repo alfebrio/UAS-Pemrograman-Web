@@ -16,26 +16,26 @@ Website **Buywinter.com** ini dibuat sebagai bagian dari tugas Ujian Akhir (UAS)
 | Database          | MySQL (via `db_steam.sql`)      |
 | Frontend          | HTML, CSS                       |
 
-##  Setup
-    ```bash
-    # (1) Buat virtual environment dan aktifkan
-    virtualenv FlaskEnv
-    FlaskEnv\Scripts\activate  # Windows
-    source FlaskEnv/bin/activate  # Mac/Linux
-    
-    # (2) Instal dependensi
-    pip install flask
-    pip install mysql-connector-python
-    
-    # (3) Set environment variables
-    set FLASK_APP=app.py
-    set FLASK_ENV=development  # Windows
-    export FLASK_APP=app.py
-    export FLASK_ENV=development  # Mac/Linux
-    
-    # (4) Jalankan aplikasi
-    flask run --debug
-    
-    # (5) Setup database
-    Import `db_steam.sql` ke database MySQL (cth: filess.io)
+##  Instalasi & Setup
+```bash
+# (1) Buat virtual environment dan aktifkan
+virtualenv FlaskEnv
+FlaskEnv\Scripts\activate  # Windows
+source FlaskEnv/bin/activate  # Mac/Linux
+
+# (2) Instal dependensi
+pip install flask
+pip install mysql-connector-python
+
+# (3) Set environment variables
+set FLASK_APP=app.py
+set FLASK_ENV=development  # Windows
+export FLASK_APP=app.py
+export FLASK_ENV=development  # Mac/Linux
+
+# (4) Jalankan aplikasi
+flask run --debug
+
+# (5) Setup database
+Import `db_steam.sql` ke database MySQL
 
